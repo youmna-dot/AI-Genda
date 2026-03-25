@@ -5,9 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../auth/controllers/auth_controller.dart';
 
-// ══════════════════════════════════════════════════════
-// CHAT SCREEN
-// ══════════════════════════════════════════════════════
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
   @override
@@ -481,9 +478,7 @@ class _ChatScreenState extends State<ChatScreen>
   }
 }
 
-// ══════════════════════════════════════════════════════
 // CHAT DRAWER (history sidebar)
-// ══════════════════════════════════════════════════════
 class _ChatDrawer extends StatelessWidget {
   final List<_ChatSession> sessions;
   final int activeIndex;
@@ -683,9 +678,7 @@ class _ChatDrawer extends StatelessWidget {
   }
 }
 
-// ══════════════════════════════════════════════════════
 // SESSION TILE
-// ══════════════════════════════════════════════════════
 class _SessionTile extends StatelessWidget {
   final _ChatSession session;
   final bool isActive;
@@ -741,9 +734,7 @@ class _SessionTile extends StatelessWidget {
   }
 }
 
-// ══════════════════════════════════════════════════════
 // ROBOT ILLUSTRATION (pure Flutter, no assets needed)
-// ══════════════════════════════════════════════════════
 class _RobotIllustration extends StatefulWidget {
   @override
   State<_RobotIllustration> createState() => _RobotIllustrationState();
@@ -903,9 +894,7 @@ class _RobotPainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter old) => false;
 }
 
-// ══════════════════════════════════════════════════════
 // SUGGESTION CHIP
-// ══════════════════════════════════════════════════════
 class _SuggestionChip extends StatefulWidget {
   final _Suggestion suggestion;
   final VoidCallback onTap;
@@ -990,9 +979,7 @@ class _SuggestionChipState extends State<_SuggestionChip>
   }
 }
 
-// ══════════════════════════════════════════════════════
 // MESSAGE BUBBLE
-// ══════════════════════════════════════════════════════
 class _MessageBubble extends StatefulWidget {
   final _ChatMessage message;
   const _MessageBubble({required this.message});
@@ -1126,9 +1113,7 @@ class _MessageBubbleState extends State<_MessageBubble>
   }
 }
 
-// ══════════════════════════════════════════════════════
 // TYPING DOTS ANIMATION
-// ══════════════════════════════════════════════════════
 class _TypingDots extends StatefulWidget {
   const _TypingDots();
   @override
@@ -1179,9 +1164,7 @@ class _TypingDotsState extends State<_TypingDots>
   }
 }
 
-// ══════════════════════════════════════════════════════
 // MODELS
-// ══════════════════════════════════════════════════════
 class _ChatSession {
   final String title;
   final List<_ChatMessage> messages;

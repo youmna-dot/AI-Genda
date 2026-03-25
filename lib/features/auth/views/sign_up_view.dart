@@ -103,7 +103,7 @@ class _SignUpViewState extends State<SignUpView> {
               const SizedBox(height: 14),
             ],
 
-            // ── First Name + Last Name ──
+            //  First Name + Last Name 
             Row(
               children: [
                 Expanded(

@@ -24,12 +24,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _initDeepLinks() {
-    // ── لما الأبلكيشن شغال وييجي link ──
     _appLinks.uriLinkStream.listen((Uri uri) {
       _handleDeepLink(uri);
     });
 
-    // ── لما الأبلكيشن يفتح من الـ link ──
     _appLinks.getInitialLink().then((uri) {
       if (uri != null) _handleDeepLink(uri);
     });
@@ -38,15 +36,14 @@ class _MyAppState extends State<MyApp> {
   void _handleDeepLink(Uri uri) {
     final path = uri.path.toLowerCase();
 
-    // ── Confirm Email ──
-    // الباك بيبعت: https://aigenda.runasp.net/Auth/confirm-email?userId=...&code=...
+    // Confirm Email 
+    // https://aigenda.runasp.net/Auth/confirm-email?userId=...&code=...
     if (path.contains('confirm-email')) {
       final userId = uri.queryParameters['userId'] ??
           uri.queryParameters['userid'] ?? '';
       final code = uri.queryParameters['code'] ?? '';
 
       if (userId.isNotEmpty && code.isNotEmpty) {
-        // بنحول الـ deep link لـ Flutter route داخلي
         router.go('/confirm-email', extra: <String, String>{
           'userId': userId,
           'code':   code,
@@ -55,8 +52,8 @@ class _MyAppState extends State<MyApp> {
       }
     }
 
-    // ── Reset Password ──
-    // الباك بيبعت: https://aigenda.runasp.net/Auth/reset-password?email=...
+    //  Reset Password 
+    //  https://aigenda.runasp.net/Auth/reset-password?email=...
     if (path.contains('reset-password')) {
       final email = uri.queryParameters['email'] ?? '';
       if (email.isNotEmpty) {

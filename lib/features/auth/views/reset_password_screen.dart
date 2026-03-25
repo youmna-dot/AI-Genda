@@ -36,7 +36,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     super.dispose();
   }
 
-  // ── Password validator ──
+  //  Password validator 
   String? _validatePassword(String? v) {
     if (v == null || v.isEmpty) return 'Enter a password';
     if (v.length < 8) return 'At least 8 characters';
@@ -49,7 +49,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     return null;
   }
 
-  // ── Reset Password ──
+  //  Reset Password 
   Future<void> _handleReset() async {
     final code =
         _codeCtrl.text.replaceAll(RegExp(r'\s+'), '').trim();
@@ -84,7 +84,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     }
   }
 
-  // ── Resend Code ──
+  //  Resend Code 
   Future<void> _handleResend() async {
     setState(() {
       _isResending = true;
@@ -120,9 +120,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  // ══════════════════════════════════════
   // SUCCESS STATE
-  // ══════════════════════════════════════
   Widget _buildSuccess() {
     return Column(
       children: [
@@ -195,14 +193,12 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  // ══════════════════════════════════════
   // FORM STATE
-  // ══════════════════════════════════════
   Widget _buildForm() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // ── Back ──
+        // Back 
         GestureDetector(
           onTap: () => context.go('/forgot-password'),
           child: Container(
@@ -227,7 +223,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 32),
 
-        // ── Icon ──
+        //  Icon 
         Center(
           child: Container(
             width: 80,
@@ -277,7 +273,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 28),
 
-        // ── Error / Success Banners ──
+        //  Error / Success Banners 
         if (_errorMessage != null) ...[
           _Banner(message: _errorMessage!, isError: true),
           const SizedBox(height: 16),
@@ -287,7 +283,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           const SizedBox(height: 16),
         ],
 
-        // ── Verification Code ──
+        //  Verification Code 
         Text(
           'Verification Code',
           style: GoogleFonts.poppins(
@@ -335,7 +331,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 8),
         Text(
-          '💡 Copy the code from your email and paste it here',
+          ' Copy the code from your email and paste it here',
           style: GoogleFonts.poppins(
             fontSize: 11,
             color: const Color(0xFF8A84A3),
@@ -344,7 +340,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 12),
 
-        // ── Resend ──
+        // Resend 
         Center(
           child: GestureDetector(
             onTap: _isResending ? null : _handleResend,
@@ -385,7 +381,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 24),
 
-        // ── Password Fields ──
+        //  Password Fields 
         Form(
           key: _formKey,
           child: Column(
@@ -460,7 +456,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Text(
-                  '💡 Password must have: A-Z · a-z · 0-9 · special char (!@#\$%)',
+                  ' Password must have: A-Z · a-z · 0-9 · special char (!@#\$%)',
                   style: GoogleFonts.poppins(
                     fontSize: 10.5,
                     color: const Color(0xFF8A84A3),
@@ -472,7 +468,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
         ),
         const SizedBox(height: 28),
 
-        // ── Reset Button ──
+        //  Reset Button 
         GestureDetector(
           onTap: _isLoading ? null : _handleReset,
           child: AnimatedContainer(
@@ -531,7 +527,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     );
   }
 
-  // ── Field Decoration Helper ──
+  // Field Decoration Helper 
   InputDecoration _fieldDecoration({
     required String hint,
     required IconData icon,
@@ -577,7 +573,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   }
 }
 
-// ── Banner ──
+//  Banner 
 class _Banner extends StatelessWidget {
   final String message;
   final bool isError;

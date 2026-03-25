@@ -39,7 +39,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
     setState(() => _isLoading = false);
 
     if (result.success) {
-      // ✅ الكود اتبعت على الإيميل → روح على شاشة الريسيت وبعّت الإيميل
       context.go('/reset-password', extra: _emailCtrl.text.trim());
     } else {
       setState(() => _errorMessage = result.errorMessage);
@@ -56,7 +55,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ── Back ──
+              // Back 
               GestureDetector(
                 onTap: () => context.pop(),
                 child: Container(
@@ -81,7 +80,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
               ),
               const SizedBox(height: 36),
 
-              // ── Icon ──
+              //  Icon 
               Container(
                 width: 70,
                 height: 70,
@@ -127,13 +126,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
               ),
               const SizedBox(height: 36),
 
-              // ── Error Banner ──
+              // Error Banner 
               if (_errorMessage != null && _errorMessage!.isNotEmpty) ...[
                 _Banner(message: _errorMessage!, isError: true),
                 const SizedBox(height: 16),
               ],
 
-              // ── Form ──
+              //  Form 
               Form(
                 key: _formKey,
                 child: Column(
@@ -206,7 +205,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                     ),
                     const SizedBox(height: 28),
 
-                    // ── Send Code Button ──
+                    //  Send Code Button 
                     GestureDetector(
                       onTap: _isLoading ? null : _handleSendCode,
                       child: AnimatedContainer(
@@ -265,7 +264,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                     ),
                     const SizedBox(height: 20),
 
-                    // ── Back to Sign In ──
+                    // Back to Sign In 
                     Center(
                       child: GestureDetector(
                         onTap: _isLoading ? null : () => context.pop(),
@@ -307,7 +306,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
   }
 }
 
-// ── Banner ──
+//  Banner 
 class _Banner extends StatelessWidget {
   final String message;
   final bool isError;

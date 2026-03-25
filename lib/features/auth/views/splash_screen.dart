@@ -261,7 +261,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 
-  // ── Single orbit dot — no array indexing ──
+  // Single orbit dot ,no array indexing 
   Widget _buildOrbitDot({
     required Size size,
     required double orbitRadius,

@@ -262,9 +262,7 @@ class _AuthScaffoldState extends State<AuthScaffold>
   }
 }
 
-// ══════════════════════════════════════════════
 // SHARED WIDGETS
-// ══════════════════════════════════════════════
 class AuthCardHeader extends StatelessWidget {
   final String title, subtitle;
   const AuthCardHeader({super.key, required this.title, required this.subtitle});

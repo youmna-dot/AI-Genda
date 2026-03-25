@@ -1,6 +1,4 @@
 // lib/features/onboarding/views/onboarding_page.dart
-// ⚠️ NOTE: الـ OnboardingPage الكاملة موجودة جوا onboarding_screen.dart
-// الملف ده للـ simple version القديمة - مش مستخدمة حالياً
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
